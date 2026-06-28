@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Penwright's Den</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Ready4Launch runtime monitor -->
+  <script>
+    window.onerror = function(msg, src, line, col, err) {
+      try {
+        fetch('https://your-actual-render-url.onrender.com/api/telemetry/report', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            appPath: window.location.pathname,
+            errorMsg: msg,
+            source: src,
+            line: line,
+            stackTrace: err ? err.stack : ''
+          })
+        });
+      } catch (_) {}
+      return true; // suppress visual error overlay
+    };
+  </script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container navbar-content">
+      <a href="#hero" class="navbar-brand animate" style="animation-delay: 0.05s;">The Penwright's Den</a>
+      <nav class="navbar-nav">
+        <a href="#about" class="nav-link animate" style="animation-delay: 0.15s;">About Us</a>
+        <a href="#products" class="nav-link animate" style="animation-delay: 0.25s;">Products</a>
+        <a href="#featured" class="nav-link animate" style="animation-delay: 0.35s;">Featured</a>
+        <a href="#testimonials" class="nav-link animate" style="animation-delay: 0.45s;">Reviews</a>
+        <a href="#contact" class="nav-link animate" style="animation-delay: 0.55s;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="container hero-content animate" style="animation-delay: 0.65s;">
+        <h1 class="headline">Crafting Inspiration, One Stroke at a Time.</h1>
+        <p class="hero-subtitle text-2">Discover premium stationery that elevates your everyday writing, drawing, and organizing.</p>
+        <a href="#products" class="btn">Explore Our Collection</a>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title headline animate" style="animation-delay: 0.05s;">Our Story</h2>
+        <div class="about-grid">
+          <div class="about-image animate" style="animation-delay: 0.15s;">
+            <img src="https://picsum.photos/600/400?random=1" alt="Crafting station" onerror="this.style.display='none'">
+          </div>
+          <div class="about-content animate" style="animation-delay: 0.25s;">
+            <p class="text-2">At The Penwright's Den, we believe that the right tools can unlock boundless creativity. Founded in Hyderabad, our passion for exquisite stationery drives us to curate a collection that blends timeless craftsmanship with modern design. From the smooth glide of a premium pen to the tactile pleasure of a fine paper, every item is chosen to inspire your next great idea.</p>
+            <p class="text-2">We're committed to quality, sustainability, and fostering a community of creators. Join us in celebrating the art of writing and the joy of discovery.</p>
+            <a href="#contact" class="btn btn-ghost">Reach Out to Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="section">
+      <div class="container">
+        <h2 class="section-title headline animate" style="animation-delay: 0.05s;">Our Curated Range</h2>
+        <p class="section-subtitle text-2 animate" style="animation-delay: 0.15s;">Explore a world of fine stationery designed for every need and passion.</p>
+        <div class="product-categories-grid" id="productCategoriesGrid">
+          <!-- Product categories will be dynamically loaded here -->
+        </div>
+        <div id="emptyCategories" class="empty-state" style="display: none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-package"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M2.7 6.8V17.2a2 2 0 0 0 1 1.73l9 5.2a2 2 0 0 0 2 0l9-5.2a2 2 0 0 0 1-1.73V6.8a2 2 0 0 0-1-1.73l-9-5.2a2 2 0 0 0-2 0l-9 5.2a2 2 0 0 0-1 1.73z"></path><polyline points="10.5 12.5 16.5 9.4 16.5 4.21"></polyline><polyline points="7.5 12.5 7.5 4.21 16.5 9.4"></polyline></svg>
+          <p>No categories found. We're restocking soon!</p>
+          <button class="btn" onclick="location.reload()">Refresh Shop</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured" class="section bg-2">
+      <div class="container">
+        <h2 class="section-title headline animate" style="animation-delay: 0.05s;">Our Bestsellers</h2>
+        <p class="section-subtitle text-2 animate" style="animation-delay: 0.15s;">Handpicked for their quality and popularity, these items are loved by our customers.</p>
+        <div class="featured-products-grid">
+          <div class="card product-card animate" style="animation-delay: 0.25s;">
+            <img src="https://picsum.photos/400/300?random=2" alt="Premium Gel Pens" onerror="this.style.display='none'">
+            <h3>Smooth Glide Gel Pens</h3>
+            <p class="text-2">Experience effortless writing with our ultra-smooth gel pens. Perfect for daily notes.</p>
+            <span class="price">₹149</span>
+            <button class="btn">View Details</button>
+          </div>
+          <div class="card product-card animate" style="animation-delay: 0.35s;">
+            <img src="https://picsum.photos/400/300?random=3" alt="Handcrafted Leather Journal" onerror="this.style.display='none'">
+            <h3>Artisan Leather Journal</h3>
+            <p class="text-2">Capture your thoughts in this beautifully bound, handcrafted leather journal.</p>
+            <span class="price">₹899</span>
+            <button class="btn">View Details</button>
+          </div>
+          <div class="card product-card animate" style="animation-delay: 0.45s;">
+            <img src="https://picsum.photos/400/300?random=4" alt="Watercolour Paint Set" onerror="this.style.display='none'">
+            <h3>Professional Watercolour Set</h3>
+            <p class="text-2">Vibrant pigments for artists of all levels. Unleash your inner painter.</p>
+            <span class="price">₹1,299</span>
+            <button class="btn">View Details</button>
+          </div>
+          <div class="card product-card animate" style="animation-delay: 0.55s;">
+            <img src="https://picsum.photos/400/300?random=5" alt="Ergonomic Desk Organiser" onerror="this.style.display='none'">
+            <h3>Modular Desk Organiser</h3>
+            <p class="text-2">Keep your workspace tidy and inspiring with our sleek, ergonomic organiser.</p>
+            <span class="price">₹649</span>
+            <button class="btn">View Details</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section">
+      <div class="container">
+        <h2 class="section-title headline animate" style="animation-delay: 0.05s;">What Our Customers Say</h2>
+        <p class="section-subtitle text-2 animate" style="animation-delay: 0.15s;">Hear from the creative minds who love our stationery.</p>
+        <div class="testimonials-grid">
+          <div class="card testimonial-card animate" style="animation-delay: 0.25s;">
+            <p class="quote">"The quality of the notebooks is simply unparalleled. My daily journaling has become a true pleasure. Highly recommend Penwright's Den!"</p>
+            <p class="author">— Priya Sharma, Bengaluru</p>
+          </div>
+          <div class="card testimonial-card animate" style="animation-delay: 0.35s;">
+            <p class="quote">"Finally found a place for premium art supplies. The watercolour set I bought is fantastic, and the colours are so vivid. Excellent service!"</p>
+            <p class="author">— Rahul Mehta, Mumbai</p>
+          </div>
+          <div class="card testimonial-card animate" style="animation-delay: 0.45s;">
+            <p class="quote">"My office desk has never looked better! The modular organiser is a game-changer. Plus, their pens write like a dream. Top-notch products."</p>
+            <p class="author">— Ananya Reddy, Hyderabad</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section bg-2">
+      <div class="container">
+        <h2 class="section-title headline animate" style="animation-delay: 0.05s;">Get In Touch</h2>
+        <p class="section-subtitle text-2 animate" style="animation-delay: 0.15s;">Have questions or just want to say hello? We'd love to hear from you.</p>
+        <div class="contact-layout">
+          <div class="card contact-info animate" style="animation-delay: 0.25s;">
+            <h3>Our Details</h3>
+            <p><strong class="text">Address:</strong> Nizampet, Hyderabad – 500090, Telangana, India</p>
+            <p><strong class="text">Phone:</strong> +91 40-2345-6789</p>
+            <p><strong class="text">Email:</strong> hello@penwrightsden.in</p>
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+              <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+              <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17-15.3 11.7 8.3 1.1 14.9-6.6 12.6-11.6-.7 1.1-1.4 1.8-2.2 2.5-.9.8-1.7 1.3-2.6 1.7-1.3.6-2.6.9-4 .9-3.3 0-6-1.2-8-3.6C2.5 7.6 2 6 2 4c0 0 2.5 1 5 1 2.5 0 4.5-1.5 6-3 0 0-2 2-2 4 0 2.5 2 4.5 4.5 4.5 1.5 0 2.8-.8 3.5-2 .5-1.5-.5-2.5-.5-2.5z"></path></svg></a>
+            </div>
+          </div>
+          <form id="contactForm" class="card contact-form animate" style="animation-delay: 0.35s;">
+            <h3>Send us a message</h3>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your full name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+            <p id="formStatus" class="form-status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="currentYear"></span> The Penwright's Den. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
